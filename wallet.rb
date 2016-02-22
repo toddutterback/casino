@@ -6,7 +6,7 @@ class Wallet
 	end
 
 	 def check_wallet
-    puts "You have #{amount} in your wallet"
+    puts "You have $#{amount} in your wallet"
   end
 
   def wallet_add(bet)
@@ -19,3 +19,4 @@ class Wallet
     check_wallet
   end
 end
+
