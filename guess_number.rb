@@ -1,4 +1,5 @@
 require_relative "dice"
+<<<<<<< HEAD
 require_relative "bet"
 
 class GuessNumber
@@ -10,6 +11,16 @@ end
 
 @GuessNumber_Game= GuessNumber.new()
 
+=======
+
+class HighLow
+	def initialze(player)
+		puts "Welcome to high low #{player.name}"
+		puts "Your wallet balaace is #{player.wallet.check_wallet}"
+	end
+end
+
+>>>>>>> d5ac8e5c8b0aed0380b1f5bb65dd5b2d9d94d989
 # place a bet
 # have player pick a number from 1 - 6
 # roll the dice
