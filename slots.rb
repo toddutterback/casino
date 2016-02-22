@@ -21,21 +21,21 @@ class Slots
 
         if wheel1 == 7 && wheel2 == 7 && wheel3 == 7
           puts "!JACKPOT!"
-          Player.wallet.wallet_add(bet *= 10)
+          player.wallet.wallet_add(bet *= 10)
 	      elsif
 		      wheel2 == wheel3
 		      puts "Double Wild"
-		      Player.wallet.wallet_add(bet *= 5)
+		      player.wallet.wallet_add(bet *= 5)
 	      elsif
 	        wheel1 == wheel2
 	        puts "Wild!"
-	        Player.wallet.wallet_add(bet *= 3)
+	        player.wallet.wallet_add(bet *= 3)
         elsif wheel1 == wheel2 && wheel2 == wheel3
 		      puts "winner"
-			    Player.wallet.wallet_add(bet, (wheel1 * 10))
+			    player.wallet.wallet_add(bet, (wheel1 * 10))
 	      else
 		      puts "try again"
-	        Player.wallet.wallet_subtract(bet)
+	        player.wallet.wallet_subtract(bet)
 	      end
       
       elsif
@@ -47,7 +47,3 @@ class Slots
       end
     end  
 end
-
-me = Slots.new
-
-me

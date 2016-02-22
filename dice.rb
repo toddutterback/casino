@@ -20,7 +20,7 @@ end
 
 d = Dice.new
 
-# puts d.roll
+puts d.roll
 # puts d.show_dice
 # puts d.show_sum
 
