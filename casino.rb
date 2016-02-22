@@ -35,6 +35,7 @@ class Casino
             game_menu
         elsif choice == 2
           player.wallet.check_wallet
+          main_menu
         elsif choice == 3 
           exit(0)
         else 
@@ -44,7 +45,7 @@ class Casino
         
     def game_menu
         puts """ ~~~ What game would you like to play? ~~~
-        1) Numbe Guess
+        1) Number Guess
         2) Blackjack
         3) Slots
         4) Exit to Main Menu"""
