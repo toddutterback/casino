@@ -1,26 +1,18 @@
+require_relative 'wallet'
+
 class Player
-  attr_accessor :wallet_add, :wallet_subtract, :check_wallet
+	attr_accessor :wallet
   attr_reader :name
   
-  def initialize(name,wallet)
+  def initialize(name,amount)
     @name = name
-    @wallet = (wallet)
+    @wallet = Wallet.new(amount)
   end
 
-  def check_wallet
-    puts @wallet
+  def drop_wallet
+  	self.wallet = nil
   end
-
-  def wallet_add(bet)
-    @wallet = @wallet + bet
-  end
-  
-  def wallet_subtract(bet)
-    @wallet = @wallet - bet
-  end
-
 end
-
 
 
 # ------THIS IS FOR TESTING-------
