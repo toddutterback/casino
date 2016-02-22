@@ -1,6 +1,7 @@
 require 'pry'
 require_relative 'player_class'
 
+
 class Casino
     attr_accessor :player
 
@@ -32,7 +33,7 @@ class Casino
           """
     choice = gets.strip.to_i
         if choice == 1
-            game_menu
+          game_menu
         elsif choice == 2
           player.wallet.check_wallet
           main_menu
@@ -51,11 +52,11 @@ class Casino
         4) Exit to Main Menu"""
         choice = gets.strip.to_i
         if choice == 1
-            number_guess
+        	@number_guess = Number_Guess.new
         elsif choice == 2
           blackjack
         elsif choice == 3
-          	slots
+          slots
         elsif choice == 4
           main_menu
         else 

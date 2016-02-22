@@ -1,32 +1,42 @@
 require_relative "dice"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 require_relative "bet"
+require_relative "player_class"
 
-class GuessNumber
-	def initialze(player)
+class Number_Guess
+	
+	def initialize(player)
 		puts "Welcome to Guess a Number #{player.name}"
 		bet
+		pick_number
+		dice_roll
+	end
+
+	def pick_number
+		puts "Pick a number, 1-6, or type 'Exit' to go back to menu"
+		@user_guess = gets.strip.to_i
+		if user_guess == exit
+			game_menu
+		elsif user_guess == 1
+		elsif 
+			puts "Thats not a valid choice, please try again"
+		end
+	end
+
+	def dice_roll
+		d.roll
+		if @user_guess == d.roll
+			puts "Congrats! You won"
+			bet
+		else
+			puts "Sorry, but that was really close. You should try again"
+			bet
+		end
 	end
 end
 
-@GuessNumber_Game= GuessNumber.new()
 
-=======
->>>>>>> ab7cd3791fbd0b0acfb2a1639ba3fd552d60da71
+Number_Guess.new
 
-class HighLow
-	def initialze(player)
-		puts "Welcome to high low #{player.name}"
-		puts "Your wallet balaace is #{player.wallet.check_wallet}"
-	end
-end
-
-<<<<<<< HEAD
-=======
->>>>>>> d5ac8e5c8b0aed0380b1f5bb65dd5b2d9d94d989
->>>>>>> ab7cd3791fbd0b0acfb2a1639ba3fd552d60da71
 # place a bet
 # have player pick a number from 1 - 6
 # roll the dice
