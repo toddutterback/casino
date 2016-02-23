@@ -1,5 +1,6 @@
 require_relative 'wallet'
 
+
 class Player
 	attr_accessor :wallet
   attr_reader :name
@@ -7,13 +8,9 @@ class Player
   def initialize(name,amount)
     @name = name
     @wallet = Wallet.new(amount)
-  end
+  end 
 
-  def drop_wallet
-  	self.wallet = nil
-  end
 end
-
 
 # ------THIS IS FOR TESTING-------
 

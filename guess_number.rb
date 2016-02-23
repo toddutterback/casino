@@ -1,41 +1,60 @@
-require_relative "dice"
-require_relative "bet"
-require_relative "player_class"
+require_relative 'player_class'
+require_relative 'wallet'
+require 'colorize'
+# require_relative "bet"
 
-class Number_Guess
+class GuessNumber
 	
 	def initialize(player)
-		puts "Welcome to Guess a Number #{player.name}"
-		bet
-		pick_number
-		dice_roll
-	end
+		@player = player
+		puts """~~~ Welcome to Guess a Number! ~~~
+		"""
+    # bet
+    pick_number
+  end
 
-	def pick_number
-		puts "Pick a number, 1-6, or type 'Exit' to go back to menu"
+  def pick_number
+    puts " How much would you like to bet?
+    "
+    @amount = gets.strip.to_i
+		puts "~~~ Pick a number, 1-6, or type '7' to go back to menu ~~~"
 		@user_guess = gets.strip.to_i
-		if user_guess == exit
-			game_menu
-		elsif user_guess == 1
+		if @user_guess == 7 && rand(1..7) == 7
+      @player.wallet.drop_wallet
+    elsif @user_guess == 7          
 		elsif 
-			puts "Thats not a valid choice, please try again"
+			[1, 2, 3, 4, 5, 6].include? @user_guess.to_i 
+			dice_roll
+		else
+			puts "Please select a number 1-6 or type 7 to exit"
+			pick_number
 		end
 	end
 
 	def dice_roll
-		d.roll
-		if @user_guess == d.roll
-			puts "Congrats! You won"
-			bet
+		if @user_guess.to_i == rand(1..6)
+			puts "***** Congrats! You won! *****".white.on_blue.bold
+			@player.wallet.wallet_add(@amount)
+			pick_number
 		else
-			puts "Sorry, but that was really close. You should try again"
-			bet
+			puts "Sorry, that was really close. You should try again"
+			@player.wallet.wallet_subtract(@amount)
+      puts "Do you want to continue? \n Enter 'no' to go back to menu or any other key to continue."
+      @user_guess2 = gets.strip.downcase
+        if @user_guess2 == "no"
+        else  
+			   pick_number
+        end 
 		end
 	end
+
+
 end
 
 
-Number_Guess.new
+# number_game = Guess_Number.new
+
+# number_game
 
 # place a bet
 # have player pick a number from 1 - 6

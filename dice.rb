@@ -15,12 +15,11 @@ class Dice
  def show_sum
    print "Sum of dice is ", @die1 + @die2, ".\n"
    end 
-
 end
 
-d = Dice.new
+# d = Dice.new
 
-puts d.roll
+# puts d.roll
 # puts d.show_dice
 # puts d.show_sum
 

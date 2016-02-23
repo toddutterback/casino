@@ -18,4 +18,18 @@ class Wallet
     self.amount -= bet
     check_wallet
   end
+  
+  def drop_wallet
+    self.wallet = nil
+    puts "Uhoh, you lost your wallet"
+    check_wallet
+  end
+
+  def find_money
+    self.wallet = wallet_add(rand(1..1000))
+    puts "Oh snap, you found some flow!"
+    check_wallet
+  end 
+
 end
+
