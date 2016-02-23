@@ -11,15 +11,18 @@ class Slots
   end
 
   def slots_menu
-    puts "Press P to Pull Lever"
-    puts "Press Q to Quit"
+   puts """
+            ~~~ Welcome to Slots! ~~~
+   To try your luck, press 'P' to pull the lever
+             OR Press 'Q' to quit!"""
     slots
   end
 
   def slots
       input = gets.strip.downcase 
     if input == "p" 
-      puts "What amount are you inserting?"
+      puts """
+           ~~~ How much do you want to bet? ~~~"""
       bet = gets.strip.to_f
 
       wheel1 = rand(1..8)
@@ -54,7 +57,7 @@ class Slots
       elsif input == "q"
 
       else
-        "Bad entry. Try Again."
+        "Invalid entry, Try Again."
         slots_menu
       end
     end

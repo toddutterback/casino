@@ -16,10 +16,10 @@ class Casino
        puts """
        ~~~ Welcome to the Casino ~~~
 
-       What is your name?"""
+            What is your name?"""
        name = gets.strip
        puts """
-       ~~~ Hello, #{name}!~~~
+          ~~~ Hello, #{name}!~~~
 
        How much money do you have?"""
        amount = gets.strip.to_f

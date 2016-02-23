@@ -6,15 +6,17 @@ class GuessNumber
 	
 	def initialize(player)
 		@player = player
-		puts "Welcome to Guess a Number"
+		puts """~~~ Welcome to Guess a Number! ~~~
+		"""
     # bet
     pick_number
   end
 
   def pick_number
-    puts "How much would you like to bet?"
+    puts " How much would you like to bet?
+    "
     @amount = gets.strip.to_i
-		puts "Pick a number, 1-6, or type '7' to go back to menu"
+		puts "~~~ Pick a number, 1-6, or type '7' to go back to menu ~~~"
 		@user_guess = gets.strip.to_i
 		if @user_guess == 7
 		elsif 
@@ -28,7 +30,7 @@ class GuessNumber
 
 	def dice_roll
 		if @user_guess.to_i == rand(1..6)
-			puts "Congrats! You won"
+			puts "***** Congrats! You won! *****"
 			@player.wallet.wallet_add(@amount)
 			pick_number
 		else
