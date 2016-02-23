@@ -1,16 +1,15 @@
 #Card Class
 class Card
- # Getter and Setter methods for rank, suit and color
- attr_accessor :rank, :suit, :color
+ # Getter and Setter methods for rank, suit
+ attr_accessor :rank, :suit
  # Gets called when you call the new method to create an instance
  # card = Card.new('10', 'K', 'Black')
- def initialize(rank, suit, color)
+ def initialize(rank, suit)
    @rank = rank
    @suit = suit
-   @color = color
  end
 end
- 
+
 
 #Deck Class
 class Deck
@@ -19,7 +18,7 @@ class Deck
  # Gets called when you call the new method to create an instance
  # deck = Deck.new
  def initialize
-   @ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
+   @ranks = %w(Ace 2 3 4 5 6 7 8 9 10 Jack Queen King)
    @suits = %w(Spades Diamonds Clubs Hearts)
    @cards = []
    generate_deck
@@ -28,12 +27,11 @@ class Deck
  def generate_deck
    @suits.each do |suit|
      @ranks.size.times do |i|
-       # Ternary Operator
-       color = (i % 2 == 0) ? 'Black' : 'Red' 
-       @cards << Card.new(@ranks[i], suit, color)
+       @cards << Card.new(@ranks[i], suit,)
      end
    end
  end
+ 
 end
 
 d = Deck.new

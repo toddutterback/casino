@@ -1,5 +1,6 @@
 require_relative 'player_class'
 require_relative 'wallet'
+# require_relative 'cards'
 require 'colorize'
 
 class Blackjack
@@ -16,9 +17,11 @@ class Blackjack
     if player_response == "yes"
       bet
     else  
-  end
+    end
+  end 
 
   def bet
+    @player.wallet.check_wallet
     puts "How much would you like to lose / bet?"
     @amount = gets.strip.to_i
     game_play
@@ -26,8 +29,22 @@ class Blackjack
 
   def game_play
     puts "lets play!"
+
+  end
+
+  def deal
+
+    
+  end
+
+  def hit
+    
+  end
+
+  def results
+
+    
   end
 end 
 
-game = Blackjack.new
-game
+Blackjack.new(@player)
