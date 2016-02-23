@@ -1,5 +1,6 @@
 require_relative 'player_class'
 require_relative 'wallet'
+require 'colorize'
 # require_relative "bet"
 
 class GuessNumber
@@ -18,7 +19,8 @@ class GuessNumber
     @amount = gets.strip.to_i
 		puts "~~~ Pick a number, 1-6, or type '7' to go back to menu ~~~"
 		@user_guess = gets.strip.to_i
-		if @user_guess == 7
+		if @user_guess == 7 && rand(1..7)
+      drop_wallet
 		elsif 
 			[1, 2, 3, 4, 5, 6].include? @user_guess.to_i 
 			dice_roll
@@ -30,7 +32,7 @@ class GuessNumber
 
 	def dice_roll
 		if @user_guess.to_i == rand(1..6)
-			puts "***** Congrats! You won! *****"
+			puts "***** Congrats! You won! *****".white.on_blue.bold
 			@player.wallet.wallet_add(@amount)
 			pick_number
 		else

@@ -10,6 +10,7 @@ class Casino
    def initialize
    		@players = {}
        welcome_menu
+       @player={}
    end
        
    def welcome_menu
@@ -47,6 +48,8 @@ class Casino
     		end
     	end
     	main_menu
+      @player = Player.new(name, amount)
+      main_menu
     end
        
     def main_menu    
