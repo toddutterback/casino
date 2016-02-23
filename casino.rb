@@ -3,6 +3,7 @@ require 'colorize'
 require_relative 'player_class'
 require_relative 'slots'
 require_relative 'guess_number'
+require_relative 'blackjack'
 
 
 class Casino
@@ -94,7 +95,7 @@ puts "                                             ".on_white
         if choice == 1
         	GuessNumber.new(@player)
         elsif choice == 2
-          blackjack
+          Blackjack.new(@player)
         elsif choice == 3
           Slots.new(@player)     
         elsif choice == 4

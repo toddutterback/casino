@@ -104,29 +104,29 @@ require 'colorize'
 
 # # """.black.on_yellow.bold
 
-print "                ".on_white
-print "C ".magenta.on_white
-print "A ".green.on_white
-print "S ".yellow.on_white
-print "I ".blue.on_white
-print "N ".cyan.on_white
-print "O".magenta.on_white
-print "                  ".on_white
-puts """
+# print "                ".on_white
+# print "C ".magenta.on_white
+# print "A ".green.on_white
+# print "S ".yellow.on_white
+# print "I ".blue.on_white
+# print "N ".cyan.on_white
+# print "O".magenta.on_white
+# print "                  ".on_white
+# puts """
                                              
- .-------.    CHOOSE AN OPTION     .-------. 
- |A  .   |                         |2 /\\   | 
- |  / \\  |  1) GAMES               |  \\/   | 
- | (_,_) |  2) CHECK BALANCE       |       | 
- |   I   |  3) ADD ANOTHER PLAYER  |  /\\   | 
- |      A|  4) SWITCH PLAYERS      |  \\/  2| 
- `-------+  5) EXIT                `-------+ 
-                                             """.red.on_green
-print "                ".on_white
-print "C ".magenta.on_white
-print "A ".green.on_white
-print "S ".yellow.on_white
-print "I ".blue.on_white
-print "N ".cyan.on_white
-print "O".magenta.on_white
-puts "                  ".on_white
+#  .-------.    CHOOSE AN OPTION     .-------. 
+#  |A  .   |                         |2 /\\   | 
+#  |  / \\  |  1) GAMES               |  \\/   | 
+#  | (_,_) |  2) CHECK BALANCE       |       | 
+#  |   I   |  3) ADD ANOTHER PLAYER  |  /\\   | 
+#  |      A|  4) SWITCH PLAYERS      |  \\/  2| 
+#  `-------+  5) EXIT                `-------+ 
+#                                              """.red.on_green
+# print "                ".on_white
+# print "C ".magenta.on_white
+# print "A ".green.on_white
+# print "S ".yellow.on_white
+# print "I ".blue.on_white
+# print "N ".cyan.on_white
+# print "O".magenta.on_white
+# puts "                  ".on_white
