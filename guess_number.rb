@@ -18,7 +18,7 @@ class GuessNumber
 		@user_guess = gets.strip.to_i
 		if @user_guess == 7
 		elsif 
-			@user_guess.to_i == (1 || 2 || 3 || 4 || 5 || 6)
+			[1, 2, 3, 4, 5, 6].include? @user_guess.to_i 
 			dice_roll
 		else
 			puts "Please select a number 1-6 or type 7 to exit"
