@@ -8,6 +8,7 @@ class Casino
    attr_accessor :player
 
    def initialize
+   		@players = {}
        welcome_menu
    end
        
@@ -26,9 +27,26 @@ class Casino
 
        How much money do you have?"""
       amount = gets.strip.to_f
-      @player = Player.new(name, amount)
-      @player2 = Player.new(name, amount)
-      main_menu
+      @players[name] = Player.new(name, amount)
+      switch_players
+    end
+
+    def switch_players
+    	if @players.keys.length == 1
+    		@player = @players[@players.keys[0]]
+    	else
+    		puts "Choose Player (enter player name exactly)"
+    		puts @players.keys
+    		choose = gets.strip
+    		if @players.keys.include?(choose)
+    			@player = @players[choose]
+    		else
+    			puts """
+    			Invalid selection, please try again."""
+    			switch_players
+    		end
+    	end
+    	main_menu
     end
        
     def main_menu    
@@ -49,7 +67,7 @@ class Casino
         elsif choice == 3 
           add_player
         elsif choice == 4
-        	  
+        	switch_players
         elsif choice == 5
         	exit(0)
         			
