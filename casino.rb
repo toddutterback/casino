@@ -9,6 +9,7 @@ class Casino
 
    def initialize
        welcome_menu
+       @player={}
    end
        
    def welcome_menu
@@ -27,9 +28,13 @@ class Casino
        How much money do you have?"""
       amount = gets.strip.to_f
       @player = Player.new(name, amount)
-      @player2 = Player.new(name, amount)
       main_menu
     end
+
+
+    def switch_player
+		end
+
        
     def main_menu    
         puts """
@@ -49,7 +54,7 @@ class Casino
         elsif choice == 3 
           add_player
         elsif choice == 4
-        	  
+        	switch_player  
         elsif choice == 5
         	exit(0)
         			

@@ -1,3 +1,6 @@
+require 'paint'
+require 'colorize'
+
 # wheel1 = rand(1..8)
 # wheel2 = rand(1..8)
 # wheel3 = rand(1..8)
@@ -14,10 +17,13 @@
 #   puts "No"
 # end
 
-puts "Guess"
-user_guess = gets.strip.to_i
-if user_guess == rand(1..6)
-	puts "Congrats! You won"
-else
-	puts "sucks to be you"
-end	
+# puts "Guess"
+# user_guess = gets.strip.to_i
+# if user_guess == rand(1..6)
+# 	puts "Congrats! You won"
+# else
+# 	puts "sucks to be you"
+# end	
+
+puts Paint['Congrats, you win!!!!', :yellow, :black, :bright,] 
+puts "Congrats, you're the big winner!!".blue.on_yellow.bold
