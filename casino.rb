@@ -1,4 +1,5 @@
 require 'pry'
+require 'colorize'
 require_relative 'player_class'
 require_relative 'slots'
 require_relative 'guess_number'
@@ -14,19 +15,15 @@ class Casino
    end
        
    def welcome_menu
-       puts """
-       ~~~ Welcome to the Casino ~~~"""
+       puts "       ~~~ Welcome to the Casino ~~~"""
        add_player
    end
 
    def add_player
-   		puts """
-   		What is your name?"""
+   		puts "             What is your name?"
       name = gets.strip
-      puts """
-          ~~~ Hello, #{name}!~~~
-
-       How much money do you have?"""
+      puts "            ~~~ Hello, #{name}!~~~"
+      puts "         How much money do you have?"
       amount = gets.strip.to_f
       @players[name] = Player.new(name, amount)
       switch_players
@@ -53,14 +50,22 @@ class Casino
     end
        
     def main_menu    
-        puts """
-          ~~~ What would you like to do? ~~~
-          1) Games 
-          2) Check Balance
-          3) Add another player
-          4) Switch players
-          5) Exit
-          """
+        print "                ".on_white
+print "C ".bold.red.on_white
+print "A ".bold.yellow.on_white
+print "S ".bold.green.on_white
+print "I ".bold.cyan.on_white
+print "N ".bold.blue.on_white
+print "O".bold.magenta.on_white
+puts "                  ".on_white
+puts " .-------.                         .-------. ".bold.on_red
+puts " |A  .   |  1) GAMES               |2 /\\   | ".bold.on_yellow
+puts " |  / \\  |  2) CHECK BALANCE       |  \\/   | ".bold.on_green
+puts " | (_,_) |  3) ADD ANOTHER PLAYER  |       | ".bold.on_cyan
+puts " |   I   |  4) SWITCH PLAYERS      |  /\\   | ".bold.on_blue
+puts " |      A|  5) EXIT                |  \\/  2| ".bold.on_magenta
+puts " `-------+                         `-------+ ".bold.on_red
+puts "                                             ".on_white
     choice = gets.strip.to_i
         if choice == 1
           game_menu
