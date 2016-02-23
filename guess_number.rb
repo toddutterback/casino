@@ -31,7 +31,7 @@ class GuessNumber
 
 	def dice_roll
 		if @user_guess.to_i == rand(1..6)
-			puts "***** Congrats! You won! *****".yellow.on_blue
+			puts "***** Congrats! You won! *****".white.on_blue.bold
 			@player.wallet.wallet_add(@amount)
 			pick_number
 		else
