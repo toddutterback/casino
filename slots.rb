@@ -34,6 +34,10 @@ class Slots
       print "\n"	
 
         if wheel1 == 7 && wheel2 == 7 && wheel3 == 7
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 487c6e3516cc1c051149cf1f3caf9c03130db18c
           puts puts """JACKPOT WINNER
 
 ──────────────────██████────────────────
@@ -80,6 +84,24 @@ class Slots
           slots_menu
         elsif wheel1 == wheel2 && wheel2 == wheel3
 		      puts "Congrats, you win!!".white.on_blue.bold
+<<<<<<< HEAD
+=======
+=======
+          puts "!JACKPOT!".red.on_blue
+          @player.wallet.wallet_add(bet *= 10)
+          slots_menu
+	      elsif wheel2 == wheel3
+		      puts "Double Wild".yellow.on_blue
+		      @player.wallet.wallet_add(bet *= 5)
+          slots_menu
+	      elsif wheel1 == wheel2
+	        puts "Wild!".yellow.on_blue
+	        @player.wallet.wallet_add(bet *= 3)
+          slots_menu
+        elsif wheel1 == wheel2 && wheel2 == wheel3
+		      puts "winner".yellow.on_blue
+>>>>>>> be1e94e7b838d9c8e7755f0c2a8282ee3911caa5
+>>>>>>> 487c6e3516cc1c051149cf1f3caf9c03130db18c
 			    @player.wallet.wallet_add(bet, (wheel1 * 10))
           slots_menu
 	      else
