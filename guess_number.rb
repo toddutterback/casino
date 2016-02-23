@@ -19,8 +19,9 @@ class GuessNumber
     @amount = gets.strip.to_i
 		puts "~~~ Pick a number, 1-6, or type '7' to go back to menu ~~~"
 		@user_guess = gets.strip.to_i
-		if @user_guess == 7 && rand(7..7) == 7
+		if @user_guess == 7 && rand(1..7) == 7
       @player.wallet.drop_wallet
+    elsif @user_guess == 7          
 		elsif 
 			[1, 2, 3, 4, 5, 6].include? @user_guess.to_i 
 			dice_roll
