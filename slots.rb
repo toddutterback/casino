@@ -31,7 +31,7 @@ class Slots
       wheel3 = rand(1..8)
   
       print wheel1, " ", wheel2, " ", wheel3
-      print "\n"	
+      print "\n"  
 
         if wheel1 == 7 && wheel2 == 7 && wheel3 == 7
         puts """JACKPOT WINNER
@@ -68,25 +68,25 @@ class Slots
 ─────────────███████████████───────────""".green.on_white
           @player.wallet.wallet_add(bet *= 10)
           slots_menu
-	      elsif wheel2 == wheel3
-		      puts "Double Wild".white.on_green.bold
+        elsif wheel2 == wheel3
+          puts "Double Wild".white.on_green.bold
           puts "Congrats, you win!!".white.on_green.bold
-		      @player.wallet.wallet_add(bet *= 5)
+          @player.wallet.wallet_add(bet *= 5)
           slots_menu
-	      elsif wheel1 == wheel2
-	        puts "Wild!".white.on_blue.bold
+        elsif wheel1 == wheel2
+          puts "Wild!".white.on_blue.bold
           puts"Congrats, you win!!".white.on_blue.bold
-	        @player.wallet.wallet_add(bet *= 3)
+          @player.wallet.wallet_add(bet *= 3)
           slots_menu
         elsif wheel1 == wheel2 && wheel2 == wheel3
-		      puts "Congrats, you win!!".white.on_blue.bold
-			    @player.wallet.wallet_add(bet, (wheel1 * 10))
+          puts "Congrats, you win!!".white.on_blue.bold
+          @player.wallet.wallet_add(bet, (wheel1 * 10))
           slots_menu
-	      else
-		      puts "try again"
-	        @player.wallet.wallet_subtract(bet)
+        else
+          puts "try again"
+          @player.wallet.wallet_subtract(bet)
           slots_menu
-	      end
+        end
       
       elsif input == "q"
 
