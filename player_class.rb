@@ -1,5 +1,5 @@
 require_relative 'wallet'
-require_relative 'slots'
+
 
 class Player
 	attr_accessor :wallet

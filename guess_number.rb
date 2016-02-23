@@ -1,19 +1,22 @@
 require_relative 'player_class'
+require_relative 'wallet'
 # require_relative "bet"
 
-class Guess_Number
+class GuessNumber
 	
-	def initialize
+	def initialize(player)
+		@player = player
 		puts "Welcome to Guess a Number"
-		# bet
-		pick_number
-	end
+    # bet
+    pick_number
+  end
 
-	def pick_number
+  def pick_number
+    puts "How much would you like to bet?"
+    @amount = gets.strip.to_i
 		puts "Pick a number, 1-6, or type '7' to go back to menu"
 		@user_guess = gets.strip.to_i
 		if @user_guess == 7
-			game_menu
 		elsif 
 			@user_guess.to_i == (1 || 2 || 3 || 4 || 5 || 6)
 			dice_roll
@@ -23,23 +26,23 @@ class Guess_Number
 		end
 	end
 
-	def dice_roll(player, wallet)
+	def dice_roll
 		if @user_guess.to_i == rand(1..6)
 			puts "Congrats! You won"
-			player.wallet.wallet_add(bet)
+			@player.wallet.wallet_add(@amount)
 			pick_number
 		else
 			puts "Sorry, that was really close. You should try again"
-			player.wallet.wallet_subtract(bet)
+			@player.wallet.wallet_subtract(@amount)
 			pick_number
 		end
 	end
 end
 
 
-number_game = Guess_Number.new
+# number_game = Guess_Number.new
 
-number_game
+# number_game
 
 # place a bet
 # have player pick a number from 1 - 6

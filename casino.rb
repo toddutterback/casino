@@ -1,5 +1,7 @@
 require 'pry'
 require_relative 'player_class'
+require_relative 'slots'
+require_relative 'guess_number'
 
 
 class Casino
@@ -23,51 +25,6 @@ class Casino
        amount = gets.strip.to_f
        @player = Player.new(name, amount)
    end
-
-<<<<<<< HEAD
-   def main_menu    
-       puts """
-         ~~~ What would you like to do? ~~~
-         1) Games 
-         2) Check Balance
-         3) Exit
-         """
-   choice = gets.strip.to_i
-       if choice == 1
-         game_menu
-       elsif choice == 2
-         player.wallet.check_wallet
-         main_menu
-       elsif choice == 3 
-         exit(0)
-       else 
-         puts "Thats not a valid choice, please try again"
-       end
-   end
-       
-   def game_menu
-       puts """ ~~~ What game would you like to play? ~~~
-       1) Number Guess
-       2) Blackjack
-       3) Slots
-       4) Exit to Main Menu"""
-       choice = gets.strip.to_i
-       if choice == 1
-           @number_guess = Number_Guess.new
-       elsif choice == 2
-         blackjack
-       elsif choice == 3
-         Slots.new(@player)     
-       elsif choice == 4
-         main_menu
-       else 
-         puts "Thats not a valid choice, please try again"
-         game_menu
-       end
-       puts 'Thanks for playing!'
-       main_menu
-   end
-=======
     def main_menu    
         puts """
           ~~~ What would you like to do? ~~~
@@ -96,7 +53,7 @@ class Casino
         4) Exit to Main Menu"""
         choice = gets.strip.to_i
         if choice == 1
-        	@number_guess = Number_Guess.new
+        	GuessNumber.new(@player)
         elsif choice == 2
           blackjack
         elsif choice == 3
@@ -110,7 +67,6 @@ class Casino
         puts 'Thanks for playing!'
         main_menu
     end
->>>>>>> c5cb19f6f732317715d50707694db16bbbb8e771
 end
 
 casino = Casino.new
