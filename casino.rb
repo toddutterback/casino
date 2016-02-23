@@ -18,7 +18,8 @@ class Casino
    end
 
    def add_player
-   		puts """What is your name?"""
+   		puts """
+   		What is your name?"""
       name = gets.strip
       puts """
           ~~~ Hello, #{name}!~~~
