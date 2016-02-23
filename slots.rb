@@ -3,11 +3,19 @@ require_relative 'wallet'
 
 class Slots
 
-  def initialize 
+  def initialize(player)
+    @player = player
+    slots_menu
+  end
+
+  def slots_menu
     puts "Press P to Pull Lever"
     puts "Press Q to Quit"
+    slots
+  end
+
+  def slots
       input = gets.strip.downcase 
-    
     if input == "p" 
       puts "What amount are you inserting?"
       bet = gets.strip.to_f
@@ -21,29 +29,31 @@ class Slots
 
         if wheel1 == 7 && wheel2 == 7 && wheel3 == 7
           puts "!JACKPOT!"
-          player.wallet.wallet_add(bet *= 10)
-	      elsif
-		      wheel2 == wheel3
+          @player.wallet.wallet_add(bet *= 10)
+          slots_menu
+	      elsif wheel2 == wheel3
 		      puts "Double Wild"
-		      player.wallet.wallet_add(bet *= 5)
-	      elsif
-	        wheel1 == wheel2
+		      @player.wallet.wallet_add(bet *= 5)
+          slots_menu
+	      elsif wheel1 == wheel2
 	        puts "Wild!"
-	        player.wallet.wallet_add(bet *= 3)
+	        @player.wallet.wallet_add(bet *= 3)
+          slots_menu
         elsif wheel1 == wheel2 && wheel2 == wheel3
 		      puts "winner"
-			    player.wallet.wallet_add(bet, (wheel1 * 10))
+			    @player.wallet.wallet_add(bet, (wheel1 * 10))
+          slots_menu
 	      else
 		      puts "try again"
-	        player.wallet.wallet_subtract(bet)
+	        @player.wallet.wallet_subtract(bet)
+          slots_menu
 	      end
       
-      elsif
-        input == "q"
-        game_menu
+      elsif input == "q"
+
       else
         "Bad entry. Try Again."
-        initialize
+        slots_menu
       end
-    end  
+    end
 end

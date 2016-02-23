@@ -56,13 +56,15 @@ class Casino
         elsif choice == 2
           blackjack
         elsif choice == 3
-          @game = Slots.new
-          @game
+          Slots.new(@player)     
         elsif choice == 4
           main_menu
         else 
           puts "Thats not a valid choice, please try again"
+          game_menu
         end
+        puts 'Thanks for playing!'
+        main_menu
     end
 end
 
