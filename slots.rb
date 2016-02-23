@@ -34,7 +34,7 @@ class Slots
       print "\n"	
 
         if wheel1 == 7 && wheel2 == 7 && wheel3 == 7
-          puts puts """JACKPOT WINNER
+        puts """JACKPOT WINNER
 
 ──────────────────██████────────────────
 ─────────────────████████─█─────────────
