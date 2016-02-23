@@ -9,28 +9,35 @@ class Casino
 
    def initialize
        welcome_menu
-       main_menu
    end
        
    def welcome_menu
        puts """
-       ~~~ Welcome to the Casino ~~~
+       ~~~ Welcome to the Casino ~~~"""
+       add_player
+   end
 
-            What is your name?"""
-       name = gets.strip
-       puts """
+   def add_player
+   		puts """What is your name?"""
+      name = gets.strip
+      puts """
           ~~~ Hello, #{name}!~~~
 
        How much money do you have?"""
-       amount = gets.strip.to_f
-       @player = Player.new(name, amount)
-   end
+      amount = gets.strip.to_f
+      @player = Player.new(name, amount)
+      @player2 = Player.new(name, amount)
+      main_menu
+    end
+       
     def main_menu    
         puts """
           ~~~ What would you like to do? ~~~
           1) Games 
           2) Check Balance
-          3) Exit
+          3) Add another player
+          4) Switch players
+          5) Exit
           """
     choice = gets.strip.to_i
         if choice == 1
@@ -39,7 +46,12 @@ class Casino
           player.wallet.check_wallet
           main_menu
         elsif choice == 3 
-          exit(0)
+          add_player
+        elsif choice == 4
+        	  
+        elsif choice == 5
+        	exit(0)
+        			
         else 
           puts "Thats not a valid choice, please try again"
         end

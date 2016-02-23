@@ -36,9 +36,16 @@ class GuessNumber
 		else
 			puts "Sorry, that was really close. You should try again"
 			@player.wallet.wallet_subtract(@amount)
-			pick_number
+      puts "Do you want to continue? \n Enter 'no' to go back to menu or any other key to continue."
+      @user_guess2 = gets.strip.downcase
+        if @user_guess2 == "no"
+        else  
+			   pick_number
+        end 
 		end
 	end
+
+
 end
 
 
