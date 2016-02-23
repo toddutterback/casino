@@ -33,7 +33,7 @@ class Blackjack
   end
 
   def deal
-
+    
     
   end
 
@@ -42,9 +42,8 @@ class Blackjack
   end
 
   def results
-
+    
     
   end
 end 
 
-Blackjack.new(@player)
