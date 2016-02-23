@@ -1,6 +1,7 @@
 
 require_relative 'player_class'
 require_relative 'wallet'
+require 'colorize'
 
 class Slots
 
@@ -33,19 +34,19 @@ class Slots
       print "\n"	
 
         if wheel1 == 7 && wheel2 == 7 && wheel3 == 7
-          puts "!JACKPOT!"
+          puts "!JACKPOT!".red.on_blue
           @player.wallet.wallet_add(bet *= 10)
           slots_menu
 	      elsif wheel2 == wheel3
-		      puts "Double Wild"
+		      puts "Double Wild".yellow.on_blue
 		      @player.wallet.wallet_add(bet *= 5)
           slots_menu
 	      elsif wheel1 == wheel2
-	        puts "Wild!"
+	        puts "Wild!".yellow.on_blue
 	        @player.wallet.wallet_add(bet *= 3)
           slots_menu
         elsif wheel1 == wheel2 && wheel2 == wheel3
-		      puts "winner"
+		      puts "winner".yellow.on_blue
 			    @player.wallet.wallet_add(bet, (wheel1 * 10))
           slots_menu
 	      else
